@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+:root {
+  --pure: #fff;
+  --info: #00b2ff;
+  --warn: #fea800;
+  --success: #a7f500;
+  --failed: #f35454;
+  --standard: #c4c4c4;
+}
+html {
+  font-family: 'Quicksand', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.notify-container {
+  position: fixed;
+
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  width: 320px;
+  height: 55px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: -3px 4px 10px rgba(0, 0, 0, 0.1);
+  animation: noti 0.5s 1 linear both;
+  /* transform: rotateY(180deg); */
+  /* transform: rotateY(180deg); */
+}
+
+.RightTop {
+  top: 5%;
+  right: 1%;
+}
+
+.LeftTop {
+  top: 5%;
+  left: 1%;
+}
+
+.RightBottom {
+  bottom: 5%;
+  right: 1%;
+}
+
+.LefBottom {
+  bottom: 5%;
+  left: 1%;
+}
+
+@keyframes noti {
+  0% {
+    transform: translateX(100%);
+  }
+  70% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.notify-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 20px;
+  /* background-color: #f05252; */
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  /* box-shadow: 3px 0px 13px 0 rgba(240, 82, 82, 0.2); */
+}
+.notify-text {
+  margin-left: 50px;
+}
+.notify-text > h3 {
+  font-weight: 500;
+}
+.notify-cross {
+  position: absolute;
+  right: 0;
+  padding: 0 20px;
+  /* color: #f05252; */
+}
+.notify-cross > h2 {
+  font-weight: 400;
+  cursor: pointer;
+}
+.info > .notify-indicator {
+  background-color: var(--info);
+  box-shadow: 3px 0px 13px 0 rgba(0, 178, 255, 0.2);
+  color: var(--info);
+}
+
+.info > .notify-cross {
+  color: var(--info);
+}
+
+.failed > .notify-indicator {
+  background-color: var(--failed);
+  box-shadow: 3px 0px 13px 0 rgba(240, 82, 82, 0.2);
+}
+
+.failed > .notify-cross {
+  color: var(--failed);
+}
+
+.success > .notify-indicator {
+  background-color: var(--success);
+  box-shadow: 3px 0px 13px 0 rgba(167, 245, 0, 0.2);
+}
+.success > .notify-cross {
+  color: var(--success);
+}
+
+.warn > .notify-indicator {
+  background-color: var(--warn);
+  box-shadow: 3px 0px 13px 0 rgba(254, 168, 0, 0.2);
+}
+.warn > .notify-cross {
+  color: var(--warn);
+}
+
+.standard > .notify-indicator {
+  background-color: var(--standard);
+  box-shadow: 3px 0px 13px 0 rgba(222, 222, 222, 0.2);
+}
+.standard > .notify-cross {
+  color: var(--standard);
+}
+
+.none {
+  display: none;
+}
